@@ -7,8 +7,8 @@ import time
 
 
 app = Flask(__name__)
-API_KEY = os.environ.get('WEATHER_API_KEY')
-
+# API_KEY = os.environ.get('WEATHER_API_KEY')
+API_KEY = '4b1d3b381d9370cb1209f53b25b46f83'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
