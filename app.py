@@ -24,7 +24,7 @@ def add():
         'q': city_name, 'appid': API_KEY, 'units': 'metric'}).json()
 
 
-    for k, v in r:
+    for k, v in r.items():
         print(k, ':', v)
 
     city_name = r['name'].upper()
