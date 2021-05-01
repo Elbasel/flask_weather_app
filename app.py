@@ -48,6 +48,11 @@ def add():
     return render_template('index.html', weather=weather_dict)
 
 
+@app.route('/#')
+def not_implemented():
+    return render_template('index.html')
+
+
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         arg_host, arg_port = sys.argv[1].split(':')

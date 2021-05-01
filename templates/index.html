@@ -29,7 +29,7 @@
     {% if weather %}
     <div class="card {{ weather.day_night }}">
         <div class="delete-wrapper">
-            <form action="#" method="POST">
+            <form action="#">
                 <input type="hidden" name="id" value="">
                 <button class="delete-button" type="submit">&#10006;</button>
             </form>
@@ -40,10 +40,10 @@
         <div class="city">{{ weather.city_name }}</div>
     </div>
     {% endif %}
-    
+
     <div class="card night">
         <div class="delete-wrapper">
-            <form action="#" method="POST">
+            <form action="/">
                 <input type="hidden" name="id" value="">
                 <button class="delete-button" type="submit">&#10006;</button>
             </form>
@@ -55,7 +55,7 @@
 
     <div class="card day">
         <div class="delete-wrapper">
-            <form action="#" method="POST">
+            <form action="/">
                 <input type="hidden" name="id" value="">
                 <button class="delete-button" type="submit">&#10006;</button>
             </form>
@@ -68,7 +68,7 @@
 
     <div class="card evening-morning">
         <div class="delete-wrapper">
-            <form action="#" method="POST">
+            <form action="/">
                 <input type="hidden" name="id" value="">
                 <button class="delete-button" type="submit">&#10006;</button>
             </form>
