@@ -23,6 +23,10 @@ def add():
     r = requests.get('https://api.openweathermap.org/data/2.5/weather', params={
         'q': city_name, 'appid': API_KEY, 'units': 'metric'}).json()
 
+
+    for k, v in r:
+        print(k, ':', v)
+
     city_name = r['name'].upper()
     temp = r['main']['temp']
     state = r['weather'][0]['main']
