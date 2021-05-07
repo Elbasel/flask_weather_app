@@ -7,13 +7,16 @@ import time
 
 
 app = Flask(__name__)
-# API_KEY = os.environ.get('WEATHER_API_KEY')
-API_KEY = '4b1d3b381d9370cb1209f53b25b46f83'
+API_KEY = os.environ.get('WEATHER_API_KEY')
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        return add()
+        try:
+            return add()
+        except Exception as ex:
+            print(ex)
     return render_template('index.html')
 
 
@@ -22,10 +25,6 @@ def add():
 
     r = requests.get('https://api.openweathermap.org/data/2.5/weather', params={
         'q': city_name, 'appid': API_KEY, 'units': 'metric'}).json()
-
-
-    for k, v in r.items():
-        print(k, ':', v)
 
     city_name = r['name'].upper()
     temp = r['main']['temp']
@@ -46,11 +45,6 @@ def add():
     weather_dict = {'city_name': city_name, 'day_night': day_period, 'temp': temp,
                     'state': state}
     return render_template('index.html', weather=weather_dict)
-
-
-@app.route('/#')
-def not_implemented():
-    return render_template('index.html')
 
 
 if __name__ == '__main__':
