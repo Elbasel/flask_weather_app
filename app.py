@@ -13,15 +13,13 @@ API_KEY = os.environ.get('WEATHER_API_KEY')
 
 
 @app.route('/', methods=['GET', 'POST'])
-
-	return 'hello world!'
-# def index():
-#     if request.method == 'POST':
-#         try:
-#             return add()
-#         except Exception as ex:
-#             print(ex)
-#     return render_template('index.html')
+def index():
+    if request.method == 'POST':
+        try:
+            return add()
+        except Exception as ex:
+            print(ex)
+    return render_template('index.html')
 
 
 def add():
